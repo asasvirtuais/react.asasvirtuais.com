@@ -9,7 +9,6 @@ const config = {
     'storybook-addon-swc',
   ],
   framework: {
-    name: '@storybook/preact-vite',
     options: {},
   },
   features: {
