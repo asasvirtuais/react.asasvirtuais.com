@@ -1,0 +1,1 @@
+Preact components to use on WordPress websites and other kinds of websites that require a lightweight alternative to React
