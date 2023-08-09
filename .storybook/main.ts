@@ -1,18 +1,21 @@
+import type { StorybookConfig } from '@storybook/react-vite'
 
-const config = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)', '../src/**/*.story.@(js|jsx|mjs|ts|tsx)', '../src/**/story.@(js|jsx|mjs|ts|tsx)'],
+const config: StorybookConfig = {
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)', '../src/**/*.story.@(js|jsx|mjs|ts|tsx)', '../src/**/story.tsx'],
   addons: [
     '@storybook/addon-links',
-    '@chakra-ui/storybook-addon',
     '@storybook/addon-essentials',
+    '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
-    'storybook-addon-swc',
+    '@chakra-ui/storybook-addon'
   ],
-  framework: {
-    options: {},
-  },
   features: {
+    // @ts-expect-error
     emotionAlias: false,
+  },
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
   },
   docs: {
     autodocs: 'tag',
