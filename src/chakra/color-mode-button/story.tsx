@@ -1,10 +1,10 @@
-import ColorModeButton from '.'
+import Component from '.'
 
 export default {
   title: 'Chakra/ColorModeButton',
-  component: ColorModeButton
+  component: Component
 }
 
-export const ColorModeButtonStory = () => (
-  <ColorModeButton/>
+export const ColorModeButton = () => (
+  <Component/>
 )
