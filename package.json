@@ -1,5 +1,6 @@
 {
   "name": "@asasvirtuais/react",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "storybook dev -p 6006",
