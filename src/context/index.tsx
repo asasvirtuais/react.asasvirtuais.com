@@ -3,7 +3,7 @@ import { FunctionComponent, PropsWithChildren } from 'react'
 
 export function simpleContext<D extends (...p: any) => any>( useHook: D ) {
 
-    const [ContextProvider, useContext, Context] = createContext<D>()
+    const [ContextProvider, useContext] = createContext<ReturnType<D>>()
 
     const Provider : FunctionComponent<PropsWithChildren<{}>> = ( { children } ) => {
         const context = useHook()
@@ -15,7 +15,6 @@ export function simpleContext<D extends (...p: any) => any>( useHook: D ) {
     }
 
     return {
-        Context,
         Provider,
         useContext,
     }
