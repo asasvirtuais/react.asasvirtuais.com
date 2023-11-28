@@ -1,31 +1,5 @@
 import { useState } from 'react'
 
-export function useArray<T>() {
-    const [array, setArray] = useState<T[]>([])
-    const add = (item: T) => setArray([...array, item])
-    const remove = (item: T) => setArray(array.filter((i) => i !== item))
-    return {
-        array,
-        setArray,
-        add,
-        remove,
-    }
-}
-
-export function useUniqueArray<T>() {
-    const [array, setArray] = useState<T[]>([])
-    const add = (item: T) => setArray( prev => (
-        prev.includes(item) ? [...prev] : [...prev, item]
-    ) )
-    const remove = (item: T) => setArray(array.filter((i) => i !== item))
-    return {
-        array,
-        setArray,
-        add,
-        remove,
-    }
-}
-
 type IndexedObject<ID extends string | number | symbol = string, K extends string = 'id'> = Record<K, ID>
 type IndexedObjectKey<T> = T extends IndexedObject<infer ID, infer K> ? K : never
 type IndexedObjectId<T> = T extends IndexedObject<infer ID, infer K> ? ID : never
