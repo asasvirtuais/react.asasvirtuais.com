@@ -3,8 +3,8 @@
  */
 
 import { useState } from 'react'
-import { SingleContext } from '../single'
-import { simpleContext } from '../..'
+import { SingleContext } from './single'
+import { simpleContext } from './../simple'
 
 export function fieldsContext<T>( {
     useContext: useSingle
@@ -13,7 +13,7 @@ export function fieldsContext<T>( {
     const useFields = () => {
         const { single } = useSingle()
 
-        const [data, setData] = useState<T|undefined>(single)
+        const [data, setData] = useState<T>(single ?? {} as T)
 
         return {
             single,

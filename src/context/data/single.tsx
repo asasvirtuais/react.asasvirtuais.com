@@ -10,7 +10,7 @@
 
 import { useMemo } from 'react'
 import { DataContext } from '.'
-import { simpleContext } from '..'
+import { simpleContext } from '../simple'
 
 export function singleContext<T>(
     { useContext: useData } : DataContext<T>

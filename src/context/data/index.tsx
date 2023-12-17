@@ -4,7 +4,7 @@
  */
 
 import { useUniqueArray } from '@/context/array'
-import { simpleContext } from '@/context/factory'
+import { simpleContext } from '@/context/simple'
 
 export function dataContext<T>() {
 
