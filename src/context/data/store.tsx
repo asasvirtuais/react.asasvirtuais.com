@@ -27,3 +27,5 @@ export function storeContext<T>() {
 }
 
 export type StoreContext<T> = ReturnType<typeof storeContext<T>>
+
+export default storeContext

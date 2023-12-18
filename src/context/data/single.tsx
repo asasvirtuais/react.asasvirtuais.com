@@ -10,16 +10,15 @@
 
 import { useMemo } from 'react'
 import { simpleContext } from '../simple'
-import { DataContext } from '.'
 import { StoreContext } from './store'
 
 export function singleContext<T>( store : StoreContext<T> ) {
 
     const useSingle = ( id: T ) => {
         const { array } = store.useContext()
-        const value = useMemo( () => array.find( item => item === id ), [id] )
+        const data = useMemo( () => array.find( item => item === id ), [id] )
         return {
-            value,
+            data,
         }
     }
 
@@ -27,3 +26,5 @@ export function singleContext<T>( store : StoreContext<T> ) {
 }
 
 export type SingleContext<T> = ReturnType<typeof singleContext<T>>
+
+export default singleContext

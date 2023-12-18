@@ -27,3 +27,5 @@ export function createContext<T>(
 }
 
 export type CreateContext<T> = ReturnType<typeof createContext<T>>
+
+export default createContext

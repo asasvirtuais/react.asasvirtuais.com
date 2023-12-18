@@ -7,15 +7,13 @@ import { SingleContext } from './single'
 import { simpleContext } from './../simple'
 import { DataContext } from '.'
 
-export function fieldsContext<T>( single : SingleContext<T> ) {
+export function fieldsContext<T>() {
 
-    const useFields = () => {
-        const context = single.useContext()
+    const useFields = ( props: T ) => {
 
-        const [data, setData] = useState<T>(context.value ?? {} as T)
+        const [data, setData] = useState<T>(props)
 
         return {
-            single,
             data,
             setData
         }
@@ -25,3 +23,5 @@ export function fieldsContext<T>( single : SingleContext<T> ) {
 }
 
 export type FieldsContext<T> = ReturnType<typeof fieldsContext<T>>
+
+export default fieldsContext
