@@ -5,15 +5,14 @@
 import { useState } from 'react'
 import { SingleContext } from './single'
 import { simpleContext } from './../simple'
+import { DataContext } from '.'
 
-export function fieldsContext<T>( {
-    useContext: useSingle
-} : SingleContext<T> ) {
+export function fieldsContext<T>( single : SingleContext<T> ) {
 
     const useFields = () => {
-        const { single } = useSingle()
+        const context = single.useContext()
 
-        const [data, setData] = useState<T>(single ?? {} as T)
+        const [data, setData] = useState<T>(context.value ?? {} as T)
 
         return {
             single,

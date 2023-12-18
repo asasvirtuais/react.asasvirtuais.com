@@ -9,18 +9,17 @@
  */
 
 import { useMemo } from 'react'
-import { DataContext } from '.'
 import { simpleContext } from '../simple'
+import { DataContext } from '.'
+import { StoreContext } from './store'
 
-export function singleContext<T>(
-    { useContext: useData } : DataContext<T>
-) {
+export function singleContext<T>( store : StoreContext<T> ) {
 
     const useSingle = ( id: T ) => {
-        const { array } = useData()
-        const single = useMemo( () => array.find( item => item === id ), [id] )
+        const { array } = store.useContext()
+        const value = useMemo( () => array.find( item => item === id ), [id] )
         return {
-            single,
+            value,
         }
     }
 
