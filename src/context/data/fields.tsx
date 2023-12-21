@@ -3,9 +3,7 @@
  */
 
 import { useState } from 'react'
-import { SingleContext } from './single'
 import { simpleContext } from './../simple'
-import { DataContext } from '.'
 
 export function fieldsContext<T>() {
 

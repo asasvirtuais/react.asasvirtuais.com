@@ -3,7 +3,7 @@ import { fieldsContext } from './fields'
 import { singleContext } from './single'
 import { storeContext } from './store'
 
-export function dataContext<T, D extends Partial<T> = Partial<T>>() {
+export default function dataContext<T, D extends Partial<T> = Partial<T>>() {
     const store  = storeContext<Partial<D>>()
     const fields = fieldsContext<Partial<D>>()
     const single = singleContext<Partial<D>>(store)
